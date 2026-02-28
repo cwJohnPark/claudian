@@ -19,5 +19,6 @@ export const ko: TranslationMap = {
 	'terminal.action.launchClaude': 'Claude 실행',
 	'terminal.action.insertFilePath': '파일 경로 삽입',
 	'terminal.action.restart': '터미널 재시작',
+	'terminal.activeFile.none': '파일 없음',
 	'terminal.processExited': '[프로세스 종료됨]',
 };

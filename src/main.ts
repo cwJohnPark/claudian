@@ -1,6 +1,8 @@
 import { Plugin, WorkspaceLeaf } from 'obsidian';
 import { TerminalView } from './views/TerminalView';
 import { VaultContext } from './services/VaultContext';
+import { ActiveFileTracker } from './services/ActiveFileTracker';
+import { ClaudeHookInstaller } from './services/ClaudeHookInstaller';
 import { SettingsTab } from './settings/SettingsTab';
 import { PluginSettings } from './types';
 import { TERMINAL_VIEW_TYPE, DEFAULT_SETTINGS } from './constants';
@@ -8,12 +10,15 @@ import { TERMINAL_VIEW_TYPE, DEFAULT_SETTINGS } from './constants';
 export default class ClaudeCodeBridgePlugin extends Plugin {
 	settings: PluginSettings = DEFAULT_SETTINGS;
 	private vaultContext: VaultContext | null = null;
+	private activeFileTracker: ActiveFileTracker | null = null;
 
 	async onload(): Promise<void> {
 		await this.loadSettings();
 		this.vaultContext = new VaultContext(this.app);
 
+		this.installClaudeHook();
 		this.registerTerminalView();
+		this.registerActiveFileTracker();
 		this.registerCommands();
 		this.registerRibbonIcon();
 		this.registerSettingsTab();
@@ -23,11 +28,39 @@ export default class ClaudeCodeBridgePlugin extends Plugin {
 		this.app.workspace.detachLeavesOfType(TERMINAL_VIEW_TYPE);
 	}
 
+	// Claude Code UserPromptSubmit hook 설치
+	private installClaudeHook(): void {
+		const adapter = this.app.vault.adapter as any;
+		const basePath = adapter.getBasePath?.();
+		if (basePath) {
+			ClaudeHookInstaller.install(basePath);
+		}
+	}
+
 	// 터미널 뷰 등록
 	private registerTerminalView(): void {
 		this.registerView(TERMINAL_VIEW_TYPE, (leaf) => {
 			return new TerminalView(leaf, this.settings, this.vaultContext!);
 		});
+	}
+
+	// 활성 파일 추적기 등록
+	private registerActiveFileTracker(): void {
+		this.activeFileTracker = new ActiveFileTracker(this.app);
+		this.activeFileTracker.setOnChange((path, filename) => {
+			const view = this.getTerminalView();
+			view?.updateActiveFile(path, filename);
+		});
+
+		this.registerEvent(
+			this.app.workspace.on('file-open', (file) => {
+				this.activeFileTracker?.handleFileOpen(file);
+			})
+		);
+
+		// 플러그인 로드 시 이미 열려있는 파일로 초기화
+		const currentFile = this.app.workspace.getActiveFile();
+		this.activeFileTracker.handleFileOpen(currentFile);
 	}
 
 	// 커맨드 팔레트 명령 등록

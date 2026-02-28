@@ -19,5 +19,6 @@ export const ja: TranslationMap = {
 	'terminal.action.launchClaude': 'Claude 起動',
 	'terminal.action.insertFilePath': 'ファイルパスを挿入',
 	'terminal.action.restart': 'ターミナルを再起動',
+	'terminal.activeFile.none': 'ファイルなし',
 	'terminal.processExited': '[プロセス終了]',
 };

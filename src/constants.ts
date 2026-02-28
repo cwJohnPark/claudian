@@ -1,6 +1,11 @@
+import { tmpdir } from 'os';
+import { join } from 'path';
 import { PluginSettings } from './types';
 
 export const TERMINAL_VIEW_TYPE = 'claudecode-bridge-view';
+
+// 크로스 플랫폼 컨텍스트 파일 경로
+export const CONTEXT_FILE_PATH = join(tmpdir(), 'claudecode-bridge-context.json');
 
 // 언어별 기본 시스템 프롬프트
 export const SYSTEM_PROMPTS: Record<string, string> = {

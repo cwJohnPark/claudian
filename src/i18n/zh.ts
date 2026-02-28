@@ -19,5 +19,6 @@ export const zh: TranslationMap = {
 	'terminal.action.launchClaude': '启动 Claude',
 	'terminal.action.insertFilePath': '插入文件路径',
 	'terminal.action.restart': '重启终端',
+	'terminal.activeFile.none': '无文件',
 	'terminal.processExited': '[进程已退出]',
 };

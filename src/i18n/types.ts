@@ -19,6 +19,7 @@ export type TranslationKey =
 	| 'terminal.action.launchClaude'
 	| 'terminal.action.insertFilePath'
 	| 'terminal.action.restart'
+	| 'terminal.activeFile.none'
 	| 'terminal.processExited';
 
 export type TranslationMap = Record<TranslationKey, string>;

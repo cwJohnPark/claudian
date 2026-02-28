@@ -17,6 +17,7 @@ export class TerminalView extends ItemView {
 	private vaultContext: VaultContext;
 	private resizeObserver: ResizeObserver | null = null;
 	private settings: PluginSettings;
+	private activeFileLabel: HTMLSpanElement | null = null;
 
 	constructor(
 		leaf: WorkspaceLeaf,
@@ -73,6 +74,15 @@ export class TerminalView extends ItemView {
 		this.fitAddon?.fit();
 	}
 
+	// 액션바에 활성 파일명 갱신
+	updateActiveFile(path: string, filename: string): void {
+		if (!this.activeFileLabel) {
+			return;
+		}
+		this.activeFileLabel.textContent = filename;
+		this.activeFileLabel.setAttribute('title', path);
+	}
+
 	// 터미널에 텍스트 입력
 	writeToTerminal(text: string): void {
 		this.shellSpawner.write(text);
@@ -106,6 +116,9 @@ export class TerminalView extends ItemView {
 		this.createActionButton(actionBar, 'rotate-ccw', t('terminal.action.restart'), () => {
 			this.restartTerminal();
 		});
+
+		this.activeFileLabel = actionBar.createSpan({ cls: 'claudian-active-file' });
+		this.activeFileLabel.textContent = t('terminal.activeFile.none');
 	}
 
 	private createActionButton(

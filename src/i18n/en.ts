@@ -19,5 +19,6 @@ export const en: TranslationMap = {
 	'terminal.action.launchClaude': 'Launch Claude',
 	'terminal.action.insertFilePath': 'Insert file path',
 	'terminal.action.restart': 'Restart terminal',
+	'terminal.activeFile.none': 'No file',
 	'terminal.processExited': '[Process exited]',
 };

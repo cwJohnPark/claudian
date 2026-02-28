@@ -206,6 +206,17 @@
 	color: var(--text-normal);
 }
 
+.claudian-active-file {
+	margin-left: auto;
+	font-size: 11px;
+	color: var(--text-muted);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 200px;
+	line-height: 28px;
+}
+
 .ccb-host {
 	flex: 1;
 	overflow: hidden;
