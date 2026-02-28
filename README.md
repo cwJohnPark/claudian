@@ -1,8 +1,8 @@
-# Claudian
+# ClaudeCode Bridge
 
-> **Claud**e + Obs**idian** — AI-powered terminal bridging Claude Code and your Obsidian vault.
+> AI-powered terminal bringing Claude Code into your knowledge vault.
 
-Claudian embeds a fully interactive [Claude Code](https://docs.anthropic.com/en/docs/claude-code) terminal directly inside Obsidian. It injects an Obsidian-aware system prompt so Claude understands wikilinks, tags, frontmatter, and your vault's structure out of the box.
+ClaudeCode Bridge embeds a fully interactive [Claude Code](https://docs.anthropic.com/en/docs/claude-code) terminal directly inside Obsidian. It injects a vault-aware system prompt so Claude understands wikilinks, tags, frontmatter, and your vault's structure out of the box.
 
 ## Features
 
@@ -25,9 +25,9 @@ Claudian embeds a fully interactive [Claude Code](https://docs.anthropic.com/en/
 ### Manual
 
 1. Download the latest release (`main.js`, `manifest.json`, `styles.css`)
-2. Create a folder `<vault>/.obsidian/plugins/claudian/`
+2. Create a folder `<vault>/.obsidian/plugins/claudecode-bridge/`
 3. Copy the three files into the folder
-4. Restart Obsidian and enable **Claudian** in Settings > Community plugins
+4. Restart Obsidian and enable **ClaudeCode Bridge** in Settings > Community plugins
 
 ### Build from source
 
@@ -44,10 +44,10 @@ Copy `main.js`, `manifest.json`, and `styles.css` into your vault's plugin direc
 
 | Command | Default Hotkey | Description |
 |---|---|---|
-| **Claudian: Open terminal** | — | Open the terminal panel |
-| **Claudian: Launch Claude** | — | Start Claude Code in the terminal |
-| **Claudian: Insert active file path** | `Cmd+Shift+L` | Insert current note path into terminal |
-| **Claudian: Send selection to terminal** | `Cmd+Shift+E` | Send selected text to terminal |
+| **ClaudeCode Bridge: Open terminal** | — | Open the terminal panel |
+| **ClaudeCode Bridge: Launch Claude** | — | Start Claude Code in the terminal |
+| **ClaudeCode Bridge: Insert active file path** | `Cmd+Shift+L` | Insert current note path into terminal |
+| **ClaudeCode Bridge: Send selection to terminal** | `Cmd+Shift+E` | Send selected text to terminal |
 
 ## Settings
 
@@ -59,11 +59,11 @@ Copy `main.js`, `manifest.json`, and `styles.css` into your vault's plugin direc
 | Auto-launch Claude | Automatically run Claude when the terminal opens |
 | Claude arguments | Extra CLI flags (e.g. `--permission-mode trust`) |
 | Prompt language | Default language for the system prompt (Korean / English) |
-| System prompt | Editable Obsidian-specific prompt injected via `--append-system-prompt` |
+| System prompt | Editable vault-specific prompt injected via `--append-system-prompt` |
 
 ## How the system prompt works
 
-When you launch Claude through Claudian, the plugin:
+When you launch Claude through ClaudeCode Bridge, the plugin:
 
 1. Writes the system prompt to a temporary file
 2. Passes it to Claude Code via `--append-system-prompt`

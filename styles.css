@@ -172,14 +172,14 @@
 
 /* === 플러그인 커스텀 스타일 === */
 
-.claudian-container {
+.ccb-container {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	overflow: hidden;
 }
 
-.claudian-actions {
+.ccb-actions {
 	display: flex;
 	gap: 4px;
 	padding: 4px 8px;
@@ -187,7 +187,7 @@
 	background: var(--background-secondary);
 }
 
-.claudian-action-button {
+.ccb-action-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -201,26 +201,26 @@
 	cursor: pointer;
 }
 
-.claudian-action-button:hover {
+.ccb-action-button:hover {
 	background: var(--background-modifier-hover);
 	color: var(--text-normal);
 }
 
-.claudian-host {
+.ccb-host {
 	flex: 1;
 	overflow: hidden;
 	padding: 4px;
 }
 
 /* xterm.js 컨테이너가 부모를 채우도록 설정 */
-.claudian-host .xterm {
+.ccb-host .xterm {
 	height: 100%;
 }
 
-.claudian-host .xterm-viewport {
+.ccb-host .xterm-viewport {
 	overflow-y: auto;
 }
 
-.claudian-host .xterm-screen {
+.ccb-host .xterm-screen {
 	height: 100%;
 }

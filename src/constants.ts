@@ -1,6 +1,6 @@
 import { PluginSettings } from './types';
 
-export const TERMINAL_VIEW_TYPE = 'claudian-terminal-view';
+export const TERMINAL_VIEW_TYPE = 'claudecode-bridge-view';
 
 // 언어별 기본 시스템 프롬프트
 export const SYSTEM_PROMPTS: Record<string, string> = {

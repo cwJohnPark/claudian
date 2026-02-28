@@ -5,7 +5,7 @@ import { SettingsTab } from './settings/SettingsTab';
 import { PluginSettings } from './types';
 import { TERMINAL_VIEW_TYPE, DEFAULT_SETTINGS } from './constants';
 
-export default class ClaudianPlugin extends Plugin {
+export default class ClaudeCodeBridgePlugin extends Plugin {
 	settings: PluginSettings = DEFAULT_SETTINGS;
 	private vaultContext: VaultContext | null = null;
 
@@ -34,26 +34,26 @@ export default class ClaudianPlugin extends Plugin {
 	private registerCommands(): void {
 		this.addCommand({
 			id: 'open-terminal',
-			name: 'Claudian: Open terminal',
+			name: 'ClaudeCode Bridge: Open terminal',
 			callback: () => this.activateTerminalView(),
 		});
 
 		this.addCommand({
 			id: 'launch-claude',
-			name: 'Claudian: Launch Claude',
+			name: 'ClaudeCode Bridge: Launch Claude',
 			callback: () => this.launchClaudeInTerminal(),
 		});
 
 		this.addCommand({
 			id: 'insert-file-path',
-			name: 'Claudian: Insert active file path',
+			name: 'ClaudeCode Bridge: Insert active file path',
 			hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'l' }],
 			callback: () => this.insertFilePathToTerminal(),
 		});
 
 		this.addCommand({
 			id: 'send-selection',
-			name: 'Claudian: Send selection to terminal',
+			name: 'ClaudeCode Bridge: Send selection to terminal',
 			hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'e' }],
 			editorCallback: () => this.sendSelectionToTerminal(),
 		});
@@ -61,7 +61,7 @@ export default class ClaudianPlugin extends Plugin {
 
 	// 리본 아이콘 등록
 	private registerRibbonIcon(): void {
-		this.addRibbonIcon('terminal', 'Claudian', () => {
+		this.addRibbonIcon('terminal', 'ClaudeCode Bridge', () => {
 			this.activateTerminalView();
 		});
 	}

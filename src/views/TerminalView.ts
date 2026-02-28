@@ -34,7 +34,7 @@ export class TerminalView extends ItemView {
 	}
 
 	getDisplayText(): string {
-		return 'Claudian';
+		return 'ClaudeCode Bridge';
 	}
 
 	getIcon(): string {
@@ -44,10 +44,10 @@ export class TerminalView extends ItemView {
 	async onOpen(): Promise<void> {
 		const container = this.containerEl.children[1] as HTMLElement;
 		container.empty();
-		container.addClass('claudian-container');
+		container.addClass('ccb-container');
 
 		this.mountActionBar(container);
-		const terminalHost = container.createDiv({ cls: 'claudian-host' });
+		const terminalHost = container.createDiv({ cls: 'ccb-host' });
 		this.mountTerminal(terminalHost);
 		this.spawnShellProcess();
 		this.observeResize(terminalHost);
@@ -93,7 +93,7 @@ export class TerminalView extends ItemView {
 
 	// 액션 버튼 바 생성
 	private mountActionBar(parent: HTMLElement): void {
-		const actionBar = parent.createDiv({ cls: 'claudian-actions' });
+		const actionBar = parent.createDiv({ cls: 'ccb-actions' });
 
 		this.createActionButton(actionBar, 'play', t('terminal.action.launchClaude'), () => {
 			this.launchClaude();
@@ -115,7 +115,7 @@ export class TerminalView extends ItemView {
 		handler: () => void
 	): void {
 		const button = parent.createEl('button', {
-			cls: 'claudian-action-button',
+			cls: 'ccb-action-button',
 			attr: { 'aria-label': title, title },
 		});
 		// Obsidian의 아이콘 설정
@@ -224,7 +224,7 @@ export class TerminalView extends ItemView {
 			command += ` ${args}`;
 		}
 		if (prompt) {
-			const promptPath = join(tmpdir(), 'claudian-prompt.txt');
+			const promptPath = join(tmpdir(), 'ccb-prompt.txt');
 			writeFileSync(promptPath, prompt, 'utf-8');
 			command += ` --append-system-prompt "$(cat '${promptPath}')"`;
 		}

@@ -1,5 +1,5 @@
 {
-	"name": "claudian",
+	"name": "claudecode-bridge",
 	"version": "1.0.0",
 	"description": "AI-powered terminal bringing Claude Code into your knowledge vault.",
 	"main": "main.js",
