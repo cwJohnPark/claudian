@@ -10,7 +10,7 @@ export const ko: TranslationMap = {
 	'settings.autoLaunch.name': '자동 Claude 실행',
 	'settings.autoLaunch.desc': '터미널 열 때 자동으로 Claude 명령 실행',
 	'settings.claudeArgs.name': 'Claude 추가 인자',
-	'settings.claudeArgs.desc': 'Claude 실행 시 추가할 플래그 (예: --allowedTools)',
+	'settings.claudeArgs.desc': 'Claude 실행 시 추가할 플래그 (예: --model)',
 	'settings.promptLanguage.name': '프롬프트 언어',
 	'settings.promptLanguage.desc': '시스템 프롬프트 기본 언어 선택 (변경 시 프롬프트가 초기화됩니다)',
 	'settings.systemPrompt.name': '시스템 프롬프트',

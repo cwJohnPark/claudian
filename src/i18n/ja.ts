@@ -10,7 +10,7 @@ export const ja: TranslationMap = {
 	'settings.autoLaunch.name': 'Claude 自動起動',
 	'settings.autoLaunch.desc': 'ターミナルを開いた時に自動で Claude を実行',
 	'settings.claudeArgs.name': 'Claude 追加引数',
-	'settings.claudeArgs.desc': 'Claude 実行時の追加フラグ (例: --allowedTools)',
+	'settings.claudeArgs.desc': 'Claude 実行時の追加フラグ (例: --model)',
 	'settings.promptLanguage.name': 'プロンプト言語',
 	'settings.promptLanguage.desc': 'システムプロンプトの既定言語 (変更するとプロンプトがリセットされます)',
 	'settings.systemPrompt.name': 'システムプロンプト',

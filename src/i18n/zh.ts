@@ -10,7 +10,7 @@ export const zh: TranslationMap = {
 	'settings.autoLaunch.name': '自动启动 Claude',
 	'settings.autoLaunch.desc': '打开终端时自动运行 Claude',
 	'settings.claudeArgs.name': 'Claude 额外参数',
-	'settings.claudeArgs.desc': '运行 Claude 时附加的标志 (例: --allowedTools)',
+	'settings.claudeArgs.desc': '运行 Claude 时附加的标志 (例: --model)',
 	'settings.promptLanguage.name': '提示词语言',
 	'settings.promptLanguage.desc': '系统提示词的默认语言 (更改后提示词将被重置)',
 	'settings.systemPrompt.name': '系统提示词',

@@ -22,6 +22,10 @@ export default defineConfig([
 		},
 		rules: {
 			"obsidianmd/sample-names": "off",
+			"obsidianmd/ui/sentence-case-locale-module": [
+				"error",
+				{ enforceCamelCaseLower: true, brands: ["Claude"] },
+			],
 		},
 	},
 ]);
