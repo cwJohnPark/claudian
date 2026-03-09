@@ -1,7 +1,7 @@
 {
 	"id": "claudecode-bridge",
 	"name": "ClaudeCode Bridge",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"minAppVersion": "1.0.0",
 	"description": "AI-powered terminal bringing Claude Code into your knowledge vault.",
 	"author": "cwjohnpark",

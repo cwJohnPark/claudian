@@ -85,8 +85,8 @@ export default class ClaudeCodeBridgePlugin extends Plugin {
 
 	// 리본 아이콘 등록
 	private registerRibbonIcon(): void {
-		this.addRibbonIcon('square-terminal', 'Open terminal', () => {
-			void this.activateTerminalView();
+		this.addRibbonIcon('square-terminal', 'Launch Claude', () => {
+			void this.launchClaudeInTerminal();
 		});
 	}
 
